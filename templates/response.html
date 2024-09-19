@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Details</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .response-container {
+            border: 1px solid #000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="response-container">
+        {% if error %}
+            <h1>Error</h1>
+            <p>{{ error }}</p>
+        {% else %}
+            <h1>Flight Details</h1>
+            <p>Departure City: {{ departure }}</p>
+            <p>Destination City: {{ destination }}</p>
+            <p>Departure Date: {{ date }}</p>
+            <p>Estimated Departure Time: {{ dep_time }}</p>
+            <p>Estimated Arrival Time: {{ arr_time }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
